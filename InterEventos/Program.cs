@@ -6,6 +6,7 @@ using Models.Interfaces;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Bussiness.Logic;
+using Data.Queries;
 
 internal class Program
 {
@@ -53,6 +54,8 @@ internal class Program
         builder.Services.AddScoped<IUserCommands, UserCommands>();
         builder.Services.AddScoped<IAttendantServices, AttendantLogic>();
         builder.Services.AddScoped<IAttendantCommands, AttendatCommands>();
+        builder.Services.AddScoped<ICitiesServices, CityLogic>();
+        builder.Services.AddScoped<ICitiesQueries, CitiesQueries>();
 
         var app = builder.Build();
 
